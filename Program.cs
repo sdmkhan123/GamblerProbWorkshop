@@ -7,7 +7,7 @@ namespace GamblerProbWorkshop
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Work Shope");
-            Gambler.gmblerOperation();
+            Gambler.winOrLoose();
         }
     }
 }
