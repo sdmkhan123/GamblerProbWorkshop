@@ -8,10 +8,6 @@ namespace GamblerProbWorkshop
     {
         public const int STACK = 100;
         public const int BET = 1;
-        public const int LOOSE_AMOUNT = 1;
-        public const int WIN_AMOUNT = 1;
-        public const int WIN_TOTAL = 150;
-        public const int LOOSE_TOTAL = 50;
         public static void winOrLoose()
         {
             Random random = new Random();
@@ -25,24 +21,27 @@ namespace GamblerProbWorkshop
                 Console.WriteLine("Loose");
             }
         }
-        public static void winOrLooseByPercentage()
+        public static void winOrLooseByFifty()
         {
-            int winStak = STACK;
-            int looseStak = STACK;
-            while (winStak < WIN_TOTAL && looseStak > LOOSE_TOTAL)
+            int totalStack = STACK;
+            int winPer = 0;
+            int loosePer = 0;
+            while (totalStack < 150 && totalStack > 50)
             {
                 Random random = new Random();
                 int betCheck = random.Next(0, 2);
                 if(betCheck == 1)
                 {
-                    winStak += WIN_AMOUNT;
+                    totalStack += BET;
                 }
                 else
                 {
-                    looseStak -= LOOSE_AMOUNT;
+                    totalStack -= BET;
                 }
+                winPer = (totalStack / STACK) * 100;
+                loosePer = (totalStack / STACK) * 100;
             }
-            if(looseStak == 150)
+            if(totalStack == 150)
             {
                 Console.WriteLine("Won the game");
             }
@@ -50,6 +49,7 @@ namespace GamblerProbWorkshop
             {
                 Console.WriteLine("Lost the Game");
             }
+            Console.WriteLine(totalStack);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace GamblerProbWorkshop
         {
             Console.WriteLine("Welcome to Work Shope");
             Gambler.winOrLoose();
-            Gambler.winOrLooseByPercentage();
+            Gambler.winOrLooseByFifty();
         }
     }
 }
